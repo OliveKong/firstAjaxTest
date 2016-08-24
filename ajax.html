@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>验证</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/ajax.css">
+</head>
+<body>
+	<form>
+        <input class="pay-num1 pay-iphone" type="tel" placeholder="输入会员手机号码">
+        <p class="error none">请输入正确的手机号</p>
+        <select class="pay-num2 pay-number">
+            <option value="-1">选择充值积分数</option>
+            <option value="1000">1000</option>
+            <option value="2000">2000</option>
+            <option value="3000">3000</option>
+            <option value="4000">4000</option>
+            <option value="5000">5000</option>
+            <option value="6000">6000</option>
+        </select>
+        <input class="pay-send send-btn" type="button" value="确认充值" disabled>
+        <p></p>
+    </form>
+    <div class="cover none"></div>
+    <div class="box box-success animated bounceInUp none">
+    	<p>
+    		成功啦
+    	</p>
+    	<span class="closeBox" onclick="location.reload()">关闭</span>
+    </div>
+    <div class="box box-faliure animated bounceInUp none">
+    	<p>
+    		失败了呦
+    	</p>
+    	<span class="closeBox" onclick="location.reload()">关闭</span>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
