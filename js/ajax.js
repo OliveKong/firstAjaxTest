@@ -1,7 +1,7 @@
 +(function ($) {
 	'use strict';
 	var n1 = 1;
-	var n2 = 2;
+	var n2 = 1;
 	var pay = {
 		init:function(){
 			this.validate();
@@ -17,18 +17,23 @@
 					n1=1;
 					$(".send-btn").attr("disabled",true);
 				}
+				if (n1==2 && n2==2) {
+					$(".send-btn").attr("disabled",false);
+				}else{
+					$(".send-btn").attr("disabled",true);
+				}
 			});
 			$(".pay-number").change(function(){
-				if ($(this).val()!=-1) {
+				if ($(this).val() != -1) {
 					n2=2;
-					$(".send-btn").attr({
-						disabled: false
-					});
 				}else{
 					n2=1;
-					$(".send-btn").attr({
-						disabled: true
-					});
+					$(".send-btn").attr("disabled",true);
+				}
+				if (n1==2 && n2==2) {
+					$(".send-btn").attr("disabled",false);
+				}else{
+					$(".send-btn").attr("disabled",true);
 				}
 			});
 		},
@@ -37,10 +42,10 @@
 				var iphone=$(".pay-iphone").val();
 				var inum=$(".pay-number").val();
 				$.ajax({
-					type:"post",
-					url:"usedata.js",
+					type:"post",//请求方式
+					url:"usedata.js",//传参地址
 					dataType:"json",
-					data: {usename:iphone,number:inum},
+					data: {usename:iphone,number:inum},//我传入的数据
 					success:function(data){
 						console.log(data);
 						if (data.number==inum) {
